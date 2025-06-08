@@ -1,11 +1,6 @@
 import React from 'react';
 import cls from './Button.module.css';
 
-// const inlineStyle = {
-//   color: 'lightsalmon',
-//   backgroundColor: '#ccc',
-// };
-
 const isPrimary = true;
 
 export const Button = ({ onClick, children }) => {

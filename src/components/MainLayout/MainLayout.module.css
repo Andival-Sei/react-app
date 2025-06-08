@@ -1,0 +1,37 @@
+.mainLayout {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: flex-start;
+  block-size: 100dvh;
+  gap: 0;
+}
+
+.mainWrapper {
+  display: flex;
+  overflow-y: auto;
+  align-items: stretch;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  block-size: 100%;
+  gap: 20px;
+}
+
+.main {
+  padding: 0 20px;
+}
+
+.footer {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 10px;
+  text-align: center;
+  opacity: .7;
+  color: var(--text-color);
+  background-color: transparent;
+  inline-size: 100%;
+}
