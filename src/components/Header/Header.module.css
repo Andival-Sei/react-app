@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  background-color: var(--main-bg-color);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .2);
+  inline-size: 100%;
+  block-size: 70px;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    text-transform: capitalize;
+    gap: 10px;
+  }
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}

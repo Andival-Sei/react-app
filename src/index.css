@@ -13,6 +13,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --btn-bg-color: #383b3f;
+  --btn-text-color: #fff;
 }
 
 * {
@@ -34,6 +37,9 @@ body {
   :root {
     --main-bg-color: #fff;
     --text-color: #000;
+
+    --btn-bg-color: #16444f;
+    --btn-text-color: #57c4dc;
   }
 }
 
@@ -41,6 +47,9 @@ body {
   :root {
     --main-bg-color: #23272F;
     --text-color: #fff;
+
+    --btn-bg-color: #383b3f;
+    --btn-text-color: #fff;
   }
 }
 

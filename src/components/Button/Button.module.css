@@ -1,7 +1,30 @@
 .btn {
-  background-color: burlywood;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  color: var(--btn-text-color);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: var(--btn-bg-color);
 }
 
-.primary {
-  background-color: cadetblue;
+.btn:hover {
+  border-color: #2f2f2f;
+}
+
+.btn:focus, .btn:focus-visible {
+  outline: 4px auto #2f2f2f;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+
+.active {
+  color: #000;
+  background-color: #ce7e1d;
 }
