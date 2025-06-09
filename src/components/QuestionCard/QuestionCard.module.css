@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 15px;
+  color: var(--text-color);
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, .1);
+  inline-size: 300px;
+  block-size: 350px;
+  gap: 15px;
+
+  button {
+    align-items: flex-end;
+  }
+}
+
+.cardLabels {
+  display: flex;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.cardAnswers {
+  margin-block-start: auto;
+}
+
+.cardAnswer {
+  font-size: 14px;
+  font-style: italic;
+  cursor: pointer;
+  transition: filter .8s ease-in-out;
+  text-align: justify;
+  filter: blur(4px);
+}
+
+.cardAnswer:hover {
+  filter: none;
+}

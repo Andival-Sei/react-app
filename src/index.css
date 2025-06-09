@@ -16,6 +16,8 @@
 
   --btn-bg-color: #383b3f;
   --btn-text-color: #fff;
+
+  --card-bg-color: #343a46;
 }
 
 * {
@@ -40,6 +42,8 @@ body {
 
     --btn-bg-color: #16444f;
     --btn-text-color: #57c4dc;
+
+    --card-bg-color: #ebedf0;
   }
 }
 
@@ -50,6 +54,8 @@ body {
 
     --btn-bg-color: #383b3f;
     --btn-text-color: #fff;
+
+    --card-bg-color: #343a46;
   }
 }
 
