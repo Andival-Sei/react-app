@@ -1,0 +1,43 @@
+.backdrop {
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .4);
+  inset: 0;
+}
+
+.loader {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+}
+
+.loader::after,
+.loader::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  content: '';
+  animation: rotation 2s ease-in-out infinite;
+  border: 2px solid #FFF;
+}
+
+.loader::after {
+  animation-delay: 1s;
+  border-color: #FF3D00;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
