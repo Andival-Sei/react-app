@@ -1,46 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { QuestionCard } from '../../components/QuestionCard/index.jsx';
-
-const cards = [
-  {
-    id: 1,
-    question: 'Что такое React?',
-    answer: 'React - это библиотека для создания пользовательских интерфейсов.',
-    description:
-      'Reac - это JavaScript-библиотека, разработтная Facebook, которая используется для построения UI с компонентным подходом. React позволяет вам создавать пользовательские интерфейсы из отдельных частей, называемых компонентами.',
-    resources: ['https://react.dev', 'https://react.dev/reference/react'],
-    level: 1,
-    completed: false,
-    editDate: '03.02.2025, 19:49',
-  },
-  {
-    id: 1,
-    question: 'Что такое React111?',
-    answer: 'React - это библиотека для создания пользовательских интерфейсов.',
-    description:
-      'Reac - это JavaScript-библиотека, разработтная Facebook, которая используется для построения UI с компонентным подходом. React позволяет вам создавать пользовательские интерфейсы из отдельных частей, называемых компонентами.',
-    resources: ['https://react.dev', 'https://react.dev/reference/react'],
-    level: 1,
-    completed: false,
-    editDate: '03.02.2025, 19:49',
-  },
-  {
-    id: 1,
-    question: 'Что такое React?',
-    answer: 'React - это библиотека для создания пользовательских интерфейсов.',
-    description:
-      'Reac - это JavaScript-библиотека, разработтная Facebook, которая используется для построения UI с компонентным подходом. React позволяет вам создавать пользовательские интерфейсы из отдельных частей, называемых компонентами.',
-    resources: ['https://react.dev', 'https://react.dev/reference/react'],
-    level: 1,
-    completed: false,
-    editDate: '03.02.2025, 19:49',
-  },
-];
+import { API_URL } from '../../constants/index.js';
 
 export const HomePage = () => {
+  const [questions, setQuestions] = useState([]);
+
+  const getQuestions = async () => {
+    try {
+      const response = await fetch(`${API_URL}/react`);
+      const questions = await response.json();
+
+      setQuestions(questions);
+
+      console.log('questions', questions);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getQuestions();
+  }, []);
+
   return (
     <>
-      {cards.map((card, index) => {
+      {questions.map((card, index) => {
         return <QuestionCard card={card} key={index} />;
       })}
     </>
