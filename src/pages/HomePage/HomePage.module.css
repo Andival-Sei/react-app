@@ -1,0 +1,10 @@
+.controlsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 15px 0;
+  inline-size: 100%;
+  max-inline-size: 800px;
+  gap: 10px;
+}
