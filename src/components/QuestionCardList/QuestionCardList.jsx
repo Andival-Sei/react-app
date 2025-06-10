@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import cls from './QuestionCardList.module.css';
 import { QuestionCard } from '../QuestionCard/index.jsx';
 
-export const QuestionCardList = ({ cards }) => {
+export const QuestionCardList = memo(({ cards }) => {
   return (
     <div className={cls.cardList}>
       {cards.map((card, index) => {
@@ -10,4 +10,4 @@ export const QuestionCardList = ({ cards }) => {
       })}
     </div>
   );
-};
+});
