@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage/HomePage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage/index.jsx';
 import { QuestionPage } from './pages/QuestionPage/index.jsx';
 import { AddQuestionPageLazy } from './pages/AddQuestionPage/index.jsx';
+import { EditQuestionPage } from './pages/EditQuestionPage/index.jsx';
 
 function App() {
   // return <MainLayout />;
@@ -15,6 +16,7 @@ function App() {
           <Route path="/forbidden" element={<h1>forbidden !!!</h1>} />
           <Route path="/addquestion" element={<AddQuestionPageLazy />} />
           <Route path="/question/:id" element={<QuestionPage />} />
+          <Route path="/editquestion/:id" element={<EditQuestionPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>

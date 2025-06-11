@@ -1,0 +1,15 @@
+.formTitle {
+  margin: 25px auto;
+  inline-size: fit-content;
+}
+
+.formContainer {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
+  box-shadow: 0 0 8px 5px rgba(0, 0, 0, .1);
+  inline-size: 100%;
+  max-inline-size: 600px;
+}
+
