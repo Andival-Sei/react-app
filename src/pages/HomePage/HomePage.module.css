@@ -25,6 +25,18 @@
   block-size: 40px;
 }
 
+.paginationContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px 10px 25px 10px;
+  inline-size: fit-content;
+  max-inline-size: 800px;
+  gap: 10px;
+}
+
 @media (max-width: 576px) {
   .controlsContainer {
     flex-wrap: wrap-reverse;
