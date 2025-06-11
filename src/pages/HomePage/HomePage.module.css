@@ -8,3 +8,25 @@
   max-inline-size: 800px;
   gap: 10px;
 }
+
+.noCardsInfo {
+  margin: 0 auto;
+  inline-size: fit-content;
+}
+
+.select {
+  flex-grow: 1;
+  padding: 5px;
+  color: var(--text-color);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background-color: var(--card-bg-color);
+  block-size: 40px;
+}
+
+@media (max-width: 576px) {
+  .controlsContainer {
+    flex-wrap: wrap-reverse;
+  }
+}
