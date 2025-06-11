@@ -4,6 +4,7 @@ import { Button } from '../../components/Button/index.jsx';
 import { delayFn } from '../../helpers/delayFn.js';
 import { toast } from 'react-toastify';
 import { API_URL } from '../../constants/index.js';
+import { Loader } from '../../components/Loader/index.jsx';
 
 const createCardAction = async (_prevState, formData) => {
   try {
@@ -45,6 +46,8 @@ export const AddQuestionPage = () => {
 
   return (
     <>
+      {isPending && <Loader />}
+
       <h1 className={cls.formTitle}>Add New Question</h1>
 
       <div className={cls.formContainer}>
@@ -96,7 +99,6 @@ export const AddQuestionPage = () => {
               id="resourcesField"
               cols="30"
               rows="5"
-              required
               placeholder="please enter resources separated by commas"
             ></textarea>
           </div>
