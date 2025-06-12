@@ -38,7 +38,7 @@ export const QuestionPage = () => {
 
   useEffect(() => {
     fetchCard();
-  }); // тут был массив
+  }, []);
 
   useEffect(() => {
     card !== null && setIsChecked(card.completed);

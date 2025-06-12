@@ -4,10 +4,10 @@ import { HomePage } from './pages/HomePage/HomePage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage/index.jsx';
 import { QuestionPage } from './pages/QuestionPage/index.jsx';
 import { AddQuestionPageLazy } from './pages/AddQuestionPage/index.jsx';
-import { EditQuestionPage } from './pages/EditQuestionPage/index.jsx';
 import { AuthProvider } from './auth/AuthProvider/AuthProvider.jsx';
 import { useAuth } from './hooks/useAuth.js';
 import { ForbiddenPage } from './pages/ForbiddenPage/index.jsx';
+import EditQuestionPageLazy from './pages/EditQuestionPage/EditQuestionPage.lazy.jsx';
 
 const ProtectedRoutes = () => {
   const { isAuth } = useAuth();
@@ -29,7 +29,7 @@ function App() {
 
             <Route element={<ProtectedRoutes />}>
               <Route path="/addquestion" element={<AddQuestionPageLazy />} />
-              <Route path="/editquestion/:id" element={<EditQuestionPage />} />
+              <Route path="/editquestion/:id" element={<EditQuestionPageLazy />} />
             </Route>
 
             <Route path="*" element={<NotFoundPage />} />
