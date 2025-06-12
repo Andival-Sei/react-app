@@ -6,6 +6,7 @@ import { Button } from '../../components/Button/index.jsx';
 import { useFetch } from '../../hooks/useFetch.js';
 import { API_URL } from '../../constants/index.js';
 import { Loader, SmallLoader } from '../../components/Loader/index.jsx';
+import { useAuth } from '../../hooks/useAuth.js';
 
 export const QuestionPage = () => {
   const checkboxId = useId();
@@ -13,6 +14,7 @@ export const QuestionPage = () => {
   const { id } = useParams();
   const [card, setCard] = useState(null);
   const [isChecked, setIsChecked] = useState(true);
+  const { isAuth } = useAuth();
 
   const levelVariant = () => (card.level === 1 ? 'primary' : card.level === 2 ? 'warning' : 'alert');
   const completedVariant = () => (card.completed ? 'success' : 'primary');
@@ -36,7 +38,7 @@ export const QuestionPage = () => {
 
   useEffect(() => {
     fetchCard();
-  }, []);
+  }); // тут был массив
 
   useEffect(() => {
     card !== null && setIsChecked(card.completed);
@@ -96,9 +98,11 @@ export const QuestionPage = () => {
             {isCardUpdating && <SmallLoader />}
           </label>
 
-          <Button onClick={() => navigate(`/editquestion/${card.id}`)} isDisabled={isCardUpdating}>
-            Edit question
-          </Button>
+          {isAuth && (
+            <Button onClick={() => navigate(`/editquestion/${card.id}`)} isDisabled={isCardUpdating}>
+              Edit question
+            </Button>
+          )}
           <Button onClick={() => navigate('/')} isDisabled={isCardUpdating}>
             Back
           </Button>
