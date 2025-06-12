@@ -1,11 +1,13 @@
 import React, { useActionState } from 'react';
 import { Loader } from '../../components/Loader/index.jsx';
-import cls from '../AddQuestionPage/AddQuestionPage.module.css';
+import cls from './EditQuestionPage.module.css';
 import { QuestionForm } from '../../components/QuestionForm';
 import { delayFn } from '../../helpers/delayFn.js';
 import { API_URL } from '../../constants/index.js';
 import { toast } from 'react-toastify';
 import { dateFormat } from '../../helpers/dateFormat.js';
+import { useFetch } from '../../hooks/useFetch.js';
+import { useNavigate } from 'react-router-dom';
 
 const editCardAction = async (_prevState, formData) => {
   try {
@@ -44,16 +46,41 @@ const editCardAction = async (_prevState, formData) => {
 };
 
 export const EditQuestion = ({ initialState = {} }) => {
+  const navigate = useNavigate();
   const [formState, formAction, isPending] = useActionState(editCardAction, { ...initialState, clearForm: false });
+
+  const [removeQuestion, isQuestionRemoving] = useFetch(async () => {
+    await fetch(`${API_URL}/react/${initialState.id}`, {
+      method: 'DELETE',
+    });
+
+    toast.success('The question has been successfully removed!');
+    navigate('/');
+  });
+
+  const onRemoveQuestionHandler = () => {
+    const isRemove = confirm('Are you sure?');
+
+    isRemove && removeQuestion();
+  };
 
   return (
     <>
-      {isPending && <Loader />}
+      {(isPending || isQuestionRemoving) && <Loader />}
 
       <h1 className={cls.formTitle}>Edit Question</h1>
 
       <div className={cls.formContainer}>
-        <QuestionForm formAction={formAction} state={formState} isPending={isPending} submitBtnText="Edit Question" />
+        <button className={cls.removeBtn} disabled={isPending || isQuestionRemoving} onClick={onRemoveQuestionHandler}>
+          X
+        </button>
+
+        <QuestionForm
+          formAction={formAction}
+          state={formState}
+          isPending={isPending || isQuestionRemoving}
+          submitBtnText="Edit Question"
+        />
       </div>
     </>
   );
