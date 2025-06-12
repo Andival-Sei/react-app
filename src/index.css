@@ -48,6 +48,17 @@ body {
   --green-color: #219679;
 }
 
+body:not(.darkLayout) {
+  --main-bg-color: #fff;
+  --text-color: #000;
+
+  --btn-bg-color: #383b3f;
+  --btn-text-color: #57c4dc;
+
+  --card-bg-color: #ebedf0;
+  --green-color: #219679;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --main-bg-color: #fff;
