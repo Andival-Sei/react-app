@@ -25,3 +25,4 @@ dist-ssr
 
 qodana.sarif.json
 qodana.yaml
+.vercel
